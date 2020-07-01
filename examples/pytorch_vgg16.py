@@ -7,7 +7,7 @@ from foolbox.attacks import LinfPGD
 
 if __name__ == "__main__":
     # instantiate a model
-    model = models.resnet18(pretrained=True).eval()
+    model = models.vgg16(pretrained=True).eval()
     preprocessing = dict(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225], axis=-3)
     fmodel = PyTorchModel(model, bounds=(0, 1), preprocessing=preprocessing)
 
